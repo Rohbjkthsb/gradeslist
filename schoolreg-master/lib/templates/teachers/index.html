@@ -1,0 +1,29 @@
+{% extends "teachers/teachers-base.html" %}
+
+{% block headcss %}
+{% parent %}
+{% endblock headcss %}
+{% block headjavascript %}
+{% endblock headjavascript %}
+
+{% block content %}
+<div align="center">
+<span class="head_top">Список классов:</span>
+<div class="table-corner">
+<div class= "menu-border"> Класс </div>
+<div class= "menu-border">Предмет</div>
+<div class= "menu-border"> &nbsp </div>
+<div class= "menu-border"> &nbsp </div>
+
+{% for class in classes_list %}
+<div>{{class['class']}}-{{class['letter']}}</div>
+<div>{{class['discipline']}}</div>
+
+<a href="class_lessons.php?subject_id={{class['subject_id']}}" id="update_info">  </a> 
+<div> <a href="class_lessons.php?subject_id={{class['subject_id']}}">Уроки</a></div>
+
+{% endfor %}
+</div>
+</div>
+ 
+{% endblock content %}

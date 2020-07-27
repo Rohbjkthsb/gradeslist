@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  {% block head %}
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  {% block headcss %}  
+	<link type="text/css" rel="stylesheet" href="../ui-theme/{{ui_theme}}/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../thickbox.css" />
+    <link type="text/css" rel="stylesheet" href="../style.css" />
+  {% endblock headcss%}
+  {% block headjavascript %}
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.jeditable.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/i18n/jquery-ui.datepicker-ru.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.js"></script>
+	<script type="text/javascript" src="../js/i18n/jquery.validate-ru.js"></script>
+	<script type="text/javascript" src="../js/jquery.maskedinput.js"></script>
+  {% endblock headjavascript %}
+  {% block headtitle %}
+    <title>{% block title %}Школьный журнал{% endblock %}</title>
+  {% endblock headtitle %}  
+  {% endblock head %}
+</head>
+<body>
+{% block header %}
+<div class="pageMain" >
+<div class="table_menu">
+<div class ="menu_ui"> <a href="../index.php">Главная</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui"> <a href="classes.php">Классы</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui"> <a href="teachers.php">Учителя</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui"> <a href="disciplines.php">Дисциплины</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui"> <a href="users.php">Пользователи</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui"> <a href="curriculum.php">Учебный план</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui"> <a href="index.php">Отчет</a></div>
+	<div class="line_table"> </div>
+    <div class ="menu_ui">&nbsp;<a href="login.php?action=logout">Выход</a>&nbsp; </div>
+</div>
+{% endblock header %}
+  
+  <div id="content_grid">{% block content %}{% endblock %}</div>
+  
+    {% block footer %}
+{% set rel_path %}../{% endset %}
+{% include 'cr_footer.html' %}
+    {% endblock %}
+  
+  </div>
+</body>
+</html>
